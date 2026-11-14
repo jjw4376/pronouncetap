@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PronounceTap 개인정보처리방침</title>
+<style>
+  :root { --bg:#fff; --fg:#1d1d1f; --muted:#6e6e73; --line:#e5e5ea; --accent:#3b5bdb; --soft:#edf2ff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#17171a; --fg:#f2f2f7; --muted:#a1a1aa; --line:#2e2e34; --accent:#91a7ff; --soft:#1f2747; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.75 "Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:48px 20px 80px; }
+  h1 { font-size:28px; margin:0 0 4px; }
+  h2 { font-size:19px; margin:36px 0 8px; padding-top:12px; border-top:1px solid var(--line); }
+  .meta { color:var(--muted); font-size:14px; }
+  .sum { background:var(--soft); border-radius:12px; padding:14px 18px; margin:24px 0; }
+  .sum b { color:var(--accent); }
+  table { width:100%; border-collapse:collapse; font-size:15px; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:13px; }
+  code { font-size:.9em; background:var(--soft); padding:1px 5px; border-radius:5px; }
+  .en { color:var(--muted); font-size:15px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>PronounceTap 개인정보처리방침</h1>
+  <div class="meta">크롬 확장 프로그램 "PronounceTap - 영어 발음·번역 도우미" · 시행일 2026년 11월 14일</div>
+
+  <div class="sum">
+    <b>요약</b> — 번역과 글자 인식은 모두 사용자의 컴퓨터 안에서 처리되며, 읽는 글·캡처한 화면·용어집은 자동으로 어디에도 전송되지 않습니다.
+    단, 사용자가 "보낼 피드백" 화면에서 <b>직접 동의하고 [보내기]를 누른 항목</b>(고친 번역·단어 등)만 개발자에게 전송됩니다(5번).
+  </div>
+
+  <h2>1. 수집하는 정보</h2>
+  <p>PronounceTap은 이름, 이메일, 계정, 방문 기록, 사용 통계를 수집하지 않으며, 분석·광고·추적 도구를 포함하지 않습니다.
+  개발자가 받는 정보는 사용자가 직접 보낸 피드백(5번)뿐입니다.</p>
+
+  <h2>2. 기능별 데이터 처리 방식</h2>
+  <table>
+    <tr><th>기능</th><th>처리하는 데이터</th><th>처리 위치</th></tr>
+    <tr><td>번역</td><td>사용자가 드래그한 영어 문장</td><td>크롬에 내장된 번역 모델(Translator API)로 컴퓨터 안에서 번역. 확장이 외부로 보내지 않음</td></tr>
+    <tr><td>발음·뜻</td><td>선택한 문장의 단어</td><td>확장 안에 포함된 사전 파일에서 조회</td></tr>
+    <tr><td>화면 캡처 번역</td><td>사용자가 직접 고른 화면 영역의 이미지</td><td>확장 안의 글자 인식 엔진(Tesseract)으로 컴퓨터 안에서 인식한 뒤 즉시 버림. 저장·전송하지 않음</td></tr>
+    <tr><td>음성 듣기</td><td>읽어 줄 문장</td><td>크롬·운영체제의 음성 합성 기능 사용 (아래 3번 참고)</td></tr>
+  </table>
+
+  <h2>3. 외부 서비스와 관련된 사항</h2>
+  <p><b>번역 모델 내려받기:</b> 처음 번역할 때 크롬이 Google로부터 번역 모델을 한 번 내려받습니다. 이것은 크롬 자체 기능이며 번역할 문장은 함께 전송되지 않습니다.</p>
+  <p><b>음성:</b> 크롬에서 "Google"이 붙은 온라인 음성이 선택되는 경우, 크롬이 읽어 줄 문장을 Google 음성 서비스로 보낼 수 있습니다. 이 처리는 크롬과 Google의 개인정보처리방침을 따릅니다. 운영체제에 설치된 음성(예: Microsoft, Apple 음성)을 쓰는 경우에는 컴퓨터 안에서 처리됩니다.</p>
+
+  <h2>4. 사용자 기기에 저장되는 정보</h2>
+  <ul>
+    <li><b>설정</b>(카드 위치, 읽기 모드, 음성 속도, 사이트별 사용 여부 등): <code>chrome.storage.sync</code>에 저장됩니다. 크롬 동기화를 켜 둔 경우 크롬이 사용자의 다른 기기와 동기화할 수 있습니다.</li>
+    <li><b>내 용어집·번역 교정 규칙</b>: <code>chrome.storage.local</code>에 저장되어 이 컴퓨터의 크롬 안에만 남습니다.</li>
+  </ul>
+  <p>확장을 삭제하면 위 정보도 함께 삭제됩니다. 용어집은 "내 용어집" 화면에서 언제든 내보내거나 지울 수 있습니다.</p>
+
+  <h2>5. 사용자가 보내는 피드백</h2>
+  <p>카드에서 번역·용어·발음을 고치거나 "뜻이 이상해요"를 누르면, 그 내용이 이 컴퓨터의 "보낼 피드백" 목록에만 쌓입니다.
+  사용자가 목록을 확인하고 <b>전송 동의에 체크한 뒤 [보내기]를 눌렀을 때만</b> 아래 항목이 개발자의 구글 스프레드시트(Google Apps Script)로 전송됩니다.</p>
+  <table>
+    <tr><th>보내는 항목</th><th>예</th></tr>
+    <tr><td>사용자가 고른 문장·단어와 고친 내용</td><td>원문 문장, 기계 번역, 사용자가 고친 번역 / 단어와 제안한 번역어·발음·뜻 / 캡처 인식 글과 고친 글(이미지는 보내지 않음)</td></tr>
+    <tr><td>사이트 이름</td><td><code>nature.com</code> (전체 주소·검색어는 보내지 않음)</td></tr>
+    <tr><td>읽기 모드, 확장 버전, 기록 시각</td><td>논문, 0.17.1</td></tr>
+    <tr><td>익명 설치 ID</td><td>설치마다 무작위로 만든 값. 중복·도배를 거르는 데만 쓰며 사람을 알아볼 수 없음</td></tr>
+  </table>
+  <p><b>이용 목적:</b> 번역 교정 규칙·추천 용어 팩·발음 사전의 품질 개선에만 사용합니다. 개발자가 검토해 받아들인 단어·번역어는 이름 없이 추천 용어 팩에 포함되어 다른 사용자에게 배포될 수 있습니다.<br>
+  <b>보관:</b> 검토가 끝난 원문 문장은 1년 안에 삭제합니다. 받아들인 단어·번역어는 팩에 남습니다.<br>
+  <b>삭제 요청:</b> "보낼 피드백" 화면에 표시되는 익명 ID와 함께 아래 연락처로 요청하면 해당 피드백을 지웁니다.<br>
+  <b>보내지 않으려면:</b> 같은 화면에서 "고친 내용을 이 목록에 모으기"를 끄거나, 전송 동의를 해제하면 됩니다.</p>
+
+  <h2>6. 권한을 사용하는 이유</h2>
+  <ul>
+    <li><b>모든 사이트에서 실행(호스트 권한)</b>: 어떤 사이트에서든 드래그한 영어 옆에 번역 카드를 띄우고, 사용자가 "영역 캡처"를 눌렀을 때 보이는 화면을 캡처하기 위해 필요합니다.</li>
+    <li><b>저장소(storage)</b>: 위 4번의 설정과 용어집을 저장합니다.</li>
+    <li><b>오프스크린 문서(offscreen)</b>: 글자 인식 엔진을 실행하기 위한 보이지 않는 확장 페이지입니다.</li>
+  </ul>
+
+  <h2>7. 제3자 제공·판매</h2>
+  <p>PronounceTap은 사용자 데이터를 판매하거나 제3자에게 제공하지 않으며, 광고나 신용 평가 등 확장의 목적과 관계없는 용도로 사용하지 않습니다.</p>
+
+  <h2>8. 아동의 개인정보</h2>
+  <p>PronounceTap은 어떤 연령의 사용자로부터도 이름·연락처 등 개인정보를 수집하지 않습니다.</p>
+
+  <h2>9. 변경 및 문의</h2>
+  <p>이 방침이나 데이터 처리 방식이 바뀌면 이 페이지에 시행일과 함께 게시하고, 확장 업데이트 안내로도 알립니다. 문의·삭제 요청: <a href="mailto:pocketlab1112@gmail.com">pocketlab1112@gmail.com</a></p>
+
+  <h2 lang="en">English summary</h2>
+  <p class="en" lang="en">PronounceTap does not collect names, accounts, browsing history or analytics. The only data sent to the developer is
+  feedback the user explicitly reviews, consents to and sends from the "Feedback" screen: the selected sentence or word, the user's correction,
+  the site's hostname, reading mode, extension version and a random anonymous install ID. It is stored in the developer's Google Sheet, used only to
+  improve translations, glossary packs and pronunciation data, and source sentences are deleted within a year. Deletion requests: contact below with the anonymous ID.
+  Otherwise, translation runs on-device through Chrome's built-in Translator API, and text recognition of user-selected screen areas runs
+  on-device with the bundled Tesseract engine; captured images are discarded immediately. Settings are kept in
+  <code>chrome.storage.sync</code> and the user's glossary in <code>chrome.storage.local</code>. If Chrome selects a Google
+  online voice for read-aloud, Chrome may send the spoken text to Google's speech service under Google's own privacy policy.
+  We do not sell user data or share it with third parties. Contact: <a href="mailto:pocketlab1112@gmail.com">pocketlab1112@gmail.com</a></p>
+</main>
+</body>
+</html>
